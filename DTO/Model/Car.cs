@@ -23,16 +23,11 @@ namespace DTO.Model
 
         public int FerryID { get; set; }
 
-        public Ferry Ferry { get; set; }
-
-        public List<Guest> guests { get; set; }
+        public int GuestId { get; set; }
 
         public override string ToString()
         {
             return NumberPlate + " ";
         }
-
-
-
     }
 }

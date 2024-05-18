@@ -16,9 +16,9 @@ namespace BusinessLogic.BLL
             return CarRepository.getCar(id);
         }
 
-        public void AddCar(Car car, Guest guest)
+        public void AddCar(Car car)
         {
-            CarRepository.addCar(car, guest);
+            CarRepository.addCar(car);
         }
 
 

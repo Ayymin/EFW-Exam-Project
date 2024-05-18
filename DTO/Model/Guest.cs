@@ -20,14 +20,7 @@ namespace DTO.Model
             this.IsDriver = isDriver;
         }
 
-        public Guest(string name, int age, string gender, bool isDriver, int carId)
-        {
-            this.Name = name;
-            this.Age = age;
-            this.Gender = gender;
-            this.IsDriver = isDriver;
-            this.CarId = carId;
-        }
+      
 
         public int GuestID { get; set; }
         public string Name { get; set; }
@@ -36,7 +29,6 @@ namespace DTO.Model
 
         public string Gender { get; set; }
 
-        public int CarId { get; set; }
 
         public int FerryId { get; set; }
 

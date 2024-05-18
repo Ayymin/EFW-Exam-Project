@@ -13,12 +13,12 @@ namespace DAL.Mappers
     {
         public static DTO.Model.Guest Map(Guest g)
         {
-            return new DTO.Model.Guest{FerryId = g.FerryId, Name = g.Name, Age = g.Age, Gender = g.Gender, IsDriver = g.IsDriver, CarId = g.CarId};
+            return new DTO.Model.Guest{ FerryId = g.FerryId, GuestID = g.GuestID, Name = g.Name, Age = g.Age, Gender = g.Gender, IsDriver = g.IsDriver};
         }
 
         public static Guest Map(DTO.Model.Guest g)
         {
-            return new Guest { FerryId = g.FerryId, Name = g.Name, Age = g.Age, Gender = g.Gender, IsDriver = g.IsDriver, CarId = g.CarId };
+            return new Guest { FerryId = g.FerryId, GuestID = g.GuestID, Name = g.Name, Age = g.Age, Gender = g.Gender, IsDriver = g.IsDriver};
         }
     }
 }

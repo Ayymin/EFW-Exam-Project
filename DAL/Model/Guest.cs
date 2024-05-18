@@ -13,22 +13,14 @@ namespace Eksamensprojekt.Model
         {
         }
 
+        
+
         public Guest(string name, int age, string gender, bool isDriver)
         {
             this.Name = name;
             this.Age = age;
             this.Gender = gender;
             this.IsDriver = isDriver;
-
-        }
-
-        public Guest(string name, int age, string gender, bool isDriver, int carId)
-        {
-            this.Name = name;
-            this.Age = age;
-            this.Gender = gender;
-            this.IsDriver = isDriver;
-            this.CarId = carId;
         }
 
         public int GuestID { get; set; }
@@ -37,8 +29,6 @@ namespace Eksamensprojekt.Model
         public int Age { get; set; }
 
         public string Gender { get; set; }
-
-        public int CarId { get; set; }
 
         public int FerryId { get; set; }
         

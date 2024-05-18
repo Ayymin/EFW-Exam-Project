@@ -22,12 +22,10 @@ namespace DAL.Respositories
             }
         }
 
-        public static void addCar(DTO.Model.Car car, DTO.Model.Guest guest)
+        public static void addCar(DTO.Model.Car car)
         {
             using (FerryContext context = new FerryContext())
             {
-                var currentGuest = context.Guests.Find(guest.GuestID);
-                currentGuest.CarId = car.CarID;
                 context.Cars.Add(CarMapper.Map(car));
                 context.SaveChanges();
             }

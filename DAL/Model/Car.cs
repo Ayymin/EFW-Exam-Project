@@ -20,12 +20,14 @@ namespace Eksamensprojekt.Model
         }
 
         public int CarID { get; set; }
+
+        public int GuestId {  get; set; }
+
         public string NumberPlate { get; set; }
 
         public int FerryID { get; set; }
 
 
-        public List<Guest> guests { get; set; }
 
         public override string ToString()
         {

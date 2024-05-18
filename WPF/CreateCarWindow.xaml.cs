@@ -50,7 +50,8 @@ namespace WPF
 
             Car car = new Car(numberPlate);
             car.FerryID = selectedFerry.Id;
-            carBLLL.AddCar(car, selectedGuest);
+            car.GuestId = selectedGuest.GuestID;
+            carBLLL.AddCar(car);
 
         }
 

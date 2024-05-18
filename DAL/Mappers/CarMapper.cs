@@ -11,12 +11,12 @@ namespace DAL.Mappers
     {
         public static DTO.Model.Car Map(Car car)
         {
-            return new DTO.Model.Car { NumberPlate = car.NumberPlate, FerryID = car.FerryID, CarID = car.CarID };
+            return new DTO.Model.Car { NumberPlate = car.NumberPlate, FerryID = car.FerryID, CarID = car.CarID, GuestId = car.GuestId };
         }
 
         public static Car Map(DTO.Model.Car car)
         {
-            return new Car{ NumberPlate = car.NumberPlate, FerryID = car.FerryID, CarID = car.CarID};
+            return new Car{ NumberPlate = car.NumberPlate, FerryID = car.FerryID, CarID = car.CarID, GuestId = car.GuestId };
         }
     }
 }
