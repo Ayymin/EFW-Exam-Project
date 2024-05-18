@@ -12,12 +12,12 @@ namespace DAL.Mappers
 
         public static DTO.Model.Ferry Map(Ferry ferry)
         {
-            return new DTO.Model.Ferry(ferry.Id, ferry.FerryName, ferry.GuestPrice, ferry.CarPrice);
+            return new DTO.Model.Ferry(ferry.Id, ferry.FerryName, ferry.GuestPrice, ferry.CarPrice, ferry.AmountofPassengers, ferry.AmountofCars);
         }
 
         public static Ferry Map(DTO.Model.Ferry ferry)
         {
-            return new Ferry(ferry.Id, ferry.FerryName, ferry.GuestPrice, ferry.CarPrice);
+            return new Ferry(ferry.Id, ferry.FerryName, ferry.GuestPrice, ferry.CarPrice, ferry.AmountofPassengers, ferry.AmountofCars);
         }
     }
 }

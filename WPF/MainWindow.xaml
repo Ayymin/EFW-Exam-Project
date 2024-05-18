@@ -17,6 +17,7 @@
         <ListBox x:Name="Ferry_Cars" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="487,86,198,53" Grid.RowSpan="2"/>
         <Button x:Name="PassengerButton" Content="Add Passenger" HorizontalAlignment="Left" Margin="75,86,0,0" VerticalAlignment="Top" Height="19" Width="97" Click="PassengerButton_Click"/>
         <Button x:Name="Add_Car" Content="CarButton" HorizontalAlignment="Left" Margin="75,127,0,0" VerticalAlignment="Top" Height="19" Width="97" Click="Button_Click_1"/>
+        <Button Content="Delete Passenger" HorizontalAlignment="Left" Margin="75,173,0,0" VerticalAlignment="Top" Width="97" Click="DeletePassngerWindow"/>
 
 
     </Grid>

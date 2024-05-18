@@ -98,6 +98,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DeleteCarWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteGuestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -111,6 +119,12 @@
     </Compile>
     <Compile Include="CreateGuestWindow.xaml.cs">
       <DependentUpon>CreateGuestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteCarWindow.xaml.cs">
+      <DependentUpon>DeleteCarWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteGuestWindow.xaml.cs">
+      <DependentUpon>DeleteGuestWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

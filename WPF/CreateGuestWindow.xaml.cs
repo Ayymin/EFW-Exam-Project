@@ -65,12 +65,14 @@ namespace WPF
 
             // Add the guest using business logic layer
             GuestBLL guestBLL = new GuestBLL();
-            guestBLL.addGuest(guest);
+            guestBLL.AddGuest(guest);
 
-            // Add the guest to the ferry's guest list
-            selectedFerry.GuestCargo.Add(guest);
+            // Update the AmountofPassengers in the database
+            selectedFerry.AmountofPassengers++;
+            FerryBLL.UpdateFerryPassengerAmount(selectedFerry);
 
             // Show success message
+
             MessageBox.Show("Guest successfully registered.");
         }
 

@@ -6,13 +6,19 @@
         xmlns:local="clr-namespace:WPF"
         mc:Ignorable="d"
         Title="CreateCarWindow" Height="450" Width="800">
-    <Grid>
-        <ListBox x:Name="GuestListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="36,72,622,21" SelectionChanged="GuestListBox_SelectionChanged"/>
-        <Label x:Name="GuestLabel" Content="Label" HorizontalAlignment="Left" Margin="58,32,0,0" VerticalAlignment="Top" Width="98"/>
-        <TextBox x:Name="NumberPlate" HorizontalAlignment="Left" Margin="391,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="Number_Plate" Content="Number Plate" HorizontalAlignment="Left" Margin="291,140,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.574,-0.168"/>
-        <Button x:Name="AddGuestForCar" Content="Add To Car" HorizontalAlignment="Left" Margin="195,197,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.277,1.27" Click="AddToCar"/>
-        <Button x:Name="AddCarToFerry" Content="Add To Ferry" HorizontalAlignment="Left" Margin="423,197,0,0" VerticalAlignment="Top"/>
+    <Grid RenderTransformOrigin="0.574,0.556">
+        <ListBox x:Name="GuestListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="36,72,622,21"/>
+        <Label x:Name="GuestLabel" Content="Attach a guest prior to &#xD;&#xA;the creation of a car&#xD;&#xA;" HorizontalAlignment="Left" Margin="36,27,0,0" VerticalAlignment="Top" Width="142" Height="45"/>
+        <TextBox x:Name="NumberPlate" HorizontalAlignment="Center" Margin="0,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.776,2.937"/>
+        <Label x:Name="Number_Plate" Content="Number Plate" HorizontalAlignment="Left" Margin="340,135,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.574,-0.168"/>
+        <Button x:Name="AddGuestForCar" Content="Add To Car" HorizontalAlignment="Left" Margin="301,269,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.277,1.27" Click="AddToCar"/>
+        <TextBlock Text="Car Passengers:" Margin="220,140,476,267"/>
+        <ComboBox x:Name="PassengerAmountBox" HorizontalAlignment="Left" Margin="204,182,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="PassengerAmountBox_SelectionChanged">
+            <ComboBoxItem>2</ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+            <ComboBoxItem>4</ComboBoxItem>
+            <ComboBoxItem>5</ComboBoxItem>
+        </ComboBox>
 
     </Grid>
 </Window>

@@ -12,9 +12,10 @@ namespace DTO.Model
         {
         }
 
-        public Car(string numberPlate)
+        public Car(string numberPlate, int amountOfPassengers)
         {
             this.NumberPlate = numberPlate;
+            this.AmountOfPassengers = amountOfPassengers;
         }
 
 
@@ -24,6 +25,8 @@ namespace DTO.Model
         public int FerryID { get; set; }
 
         public int GuestId { get; set; }
+
+        public int AmountOfPassengers { get; set; }
 
         public override string ToString()
         {

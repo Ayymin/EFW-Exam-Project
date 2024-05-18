@@ -17,37 +17,30 @@ namespace Eksamensprojekt.Model
 
         public int CarPrice { get; set; }
 
-        public List<Car> CarCargo { get; set; }
+        public int AmountofCars { get; set; }
 
-        public List<Guest> GuestCargo { get; set; }
+        public int AmountofPassengers { get; set; }
 
-       public Ferry() 
+        public Ferry() 
         {
-            CarCargo = new List<Car>();
-            GuestCargo = new List<Guest>();
         }
 
-     
 
         public Ferry(string ferryName, int guestPrice, int carPrice)
         {
             this.FerryName = ferryName;
             this.GuestPrice = guestPrice;
             this.CarPrice = carPrice;
-            CarCargo = new List<Car>();
-            GuestCargo = new List<Guest>();
-
         }
 
-        public Ferry(int id, string ferryName, int guestPrice, int carPrice)
+        public Ferry(int id, string ferryName, int guestPrice, int carPrice, int amountofPassengers, int amountofCars)
         {
             this.Id = id;
             this.FerryName = ferryName;
             this.GuestPrice = guestPrice;
             this.CarPrice = carPrice;
-            CarCargo = new List<Car>();
-            GuestCargo = new List<Guest>();
-
+            this.AmountofPassengers = amountofPassengers;
+            this.AmountofCars = amountofCars;
         }
 
 

@@ -14,7 +14,7 @@ namespace DAL.Respositories
 {
     public class CarRepository
     {
-        public static DTO.Model.Car getCar(int id)
+        public static DTO.Model.Car GetCar(int id)
         {
             using (FerryContext context = new FerryContext())
             {
@@ -22,16 +22,30 @@ namespace DAL.Respositories
             }
         }
 
-        public static void addCar(DTO.Model.Car car)
+        public static void AddCar(DTO.Model.Car car)
         {
             using (FerryContext context = new FerryContext())
             {
+                var existingFerry = context.Ferries.Find(car.FerryID);
+                existingFerry.AmountofCars++;
+                existingFerry.AmountofPassengers += car.AmountOfPassengers;
                 context.Cars.Add(CarMapper.Map(car));
                 context.SaveChanges();
             }
         }
 
-        public static List<DTO.Model.Car> getAllCars(int ferryId)
+        public static void RemoveCar(int id)
+        {
+            using (FerryContext context = new FerryContext())
+            {
+                var carToRemove = context.Cars.Find(id);
+                context.Cars.Remove(carToRemove);
+                context.SaveChanges();
+            }
+        }
+
+
+        public static List<DTO.Model.Car> GetAllCars(int ferryId)
         {
             using (FerryContext context = new FerryContext())
             {
@@ -47,6 +61,15 @@ namespace DAL.Respositories
                 return myDTO;
             }
 
+        }
+
+        public static int GetPassengerAmount(int carId)
+        {
+            using (FerryContext context = new FerryContext())
+            {
+                var car = context.Cars.Find(carId);
+                return car.AmountOfPassengers;
+            }
         }
 
     }

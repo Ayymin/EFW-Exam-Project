@@ -12,7 +12,7 @@ namespace DAL.Respositories
 {
     public class GuestRepository
     {
-        public static Guest getGuest(int id)
+        public static Guest GetGuest(int id)
         {
             using (FerryContext context = new FerryContext())
             {
@@ -21,7 +21,7 @@ namespace DAL.Respositories
             }
         }
 
-        public static void addGuest(Guest guest)
+        public static void AddGuest(Guest guest)
         {
             using (FerryContext context = new FerryContext())
             {
@@ -30,8 +30,20 @@ namespace DAL.Respositories
             }
         }
 
+        public static void RemoveGuest(int id) 
+        {
+            using (FerryContext context = new FerryContext())
+            {
+               
+                var guestToRemove = context.Guests.Find(id);
+                context.Guests.Remove(guestToRemove);
+                context.SaveChanges();
+            }
+        
+        }
 
-        public static List<Guest> getAllGuests()
+
+        public static List<Guest> GetAllGuests()
         {
             using (FerryContext context = new FerryContext())
             {
@@ -57,6 +69,7 @@ namespace DAL.Respositories
                 return myDTO;
             }
         }
+
 
 
 

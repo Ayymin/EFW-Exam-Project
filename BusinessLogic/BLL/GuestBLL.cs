@@ -10,27 +10,34 @@ namespace BusinessLogic.BLL
 {
     public class GuestBLL
     {
-        public Guest getGuest(int id)
+        public Guest GetGuest(int id)
         {
             if (id < 0) throw new IndexOutOfRangeException();
-            return GuestRepository.getGuest(id);
+            return GuestRepository.GetGuest(id);
         }
 
-        public void addGuest(Guest guest) 
+        public void AddGuest(Guest guest) 
         {
-            GuestRepository.addGuest(guest);
-        
+            GuestRepository.AddGuest(guest);
+        }
+
+        public void RemoveGuest(int id)
+        {
+            if (id < 0) throw new IndexOutOfRangeException();
+
+           GuestRepository.RemoveGuest(id);
         }
 
         public List<Guest> GetGuests()
         {
-            return GuestRepository.getAllGuests();
+            return GuestRepository.GetAllGuests();
 
         }
 
-        public List<Guest> GetAllGuests(int Id)
+        public List<Guest> GetAllGuests(int id)
         {
-            return GuestRepository.getAllGuests();
+            if (id < 0) throw new IndexOutOfRangeException();
+            return GuestRepository.GetAllGuests();
         }
     }
 }

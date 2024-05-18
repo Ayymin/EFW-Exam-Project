@@ -48,7 +48,7 @@ namespace WPF
             */
 
             FerryBLL ferryBLL = new FerryBLL();
-            MyListBox.ItemsSource = (ferryBLL.getAllFerries());
+            MyListBox.ItemsSource = (ferryBLL.GetAllFerries());
 
             /*selectedFerry = (Ferry)MyListBox.SelectedItem;
             CarBLL carBLL = new CarBLL();
@@ -61,7 +61,7 @@ namespace WPF
             {
 
                 selectedFerry = (Ferry)MyListBox.SelectedItem;
-                selectedFerry = FerryBLL.getFerry(selectedFerry.Id);
+                selectedFerry = FerryBLL.GetFerry(selectedFerry.Id);
 
 
                 CreateGuestWindow createGuestWindow = new CreateGuestWindow(selectedFerry);
@@ -77,7 +77,7 @@ namespace WPF
            
             selectedFerry = (Ferry)MyListBox.SelectedItem;
             CarBLL carBLL = new CarBLL();
-            Ferry_Cars.ItemsSource = (carBLL.getAllCars(selectedFerry.Id));
+            Ferry_Cars.ItemsSource = (carBLL.GetAllCars(selectedFerry.Id));
 
         }
         
@@ -86,10 +86,20 @@ namespace WPF
         {
 
             selectedFerry = (Ferry)MyListBox.SelectedItem;
-            selectedFerry = FerryBLL.getFerry(selectedFerry.Id);
+            selectedFerry = FerryBLL.GetFerry(selectedFerry.Id);
 
             CreateCarWindow createCarWindow = new CreateCarWindow(selectedFerry);
             createCarWindow.Show();
+        }
+
+        private void DeletePassngerWindow(object sender, RoutedEventArgs e)
+        {
+            selectedFerry = (Ferry)MyListBox.SelectedItem;
+            selectedFerry = FerryBLL.GetFerry(selectedFerry.Id);
+
+            DeleteGuestWindow deleteGuestWindow = new DeleteGuestWindow(selectedFerry);
+            deleteGuestWindow.Show();
+
         }
     }
 }

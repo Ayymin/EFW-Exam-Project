@@ -11,7 +11,7 @@ namespace DAL.Respositories
 {
     public class FerryRepository
     {
-        public static Ferry getFerry(int id)
+        public static Ferry GetFerry(int id)
         {
             using (FerryContext context = new FerryContext())
             {
@@ -20,10 +20,11 @@ namespace DAL.Respositories
             }
         }
 
-        public static void addFerries(Ferry ferry)
+        public static void AddFerries(Ferry ferry)
         {
             using (FerryContext context = new FerryContext())
             {
+
                 context.Ferries.Add(FerryMapper.Map(ferry));
                 context.SaveChanges();
             }
@@ -37,6 +38,22 @@ namespace DAL.Respositories
                 return context.Ferries.Select(FerryMapper.Map).ToList();
             }
         }
+
+        public static Ferry UpdateFerry(Ferry ferry)
+        {
+            using (FerryContext context = new FerryContext())
+            {
+                var existingFerry = context.Ferries.Find(ferry.Id);
+                if (existingFerry != null)
+                {
+                    existingFerry.AmountofPassengers = ferry.AmountofPassengers;
+                    context.SaveChanges();
+                    return FerryMapper.Map(existingFerry); // Ensure to map back to DTO before returning
+                }
+                return null; // Handle the case where the ferry is not found
+            }
+        }
+
 
     }
 }

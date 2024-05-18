@@ -37,7 +37,7 @@ namespace DAL.Context
 
         }
 
-        private void dummy()
+        private void Dummy()
         {
             string result = System.Data.Entity.SqlServer.SqlFunctions.Char(65);
         }
