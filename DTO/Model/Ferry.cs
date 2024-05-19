@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
@@ -34,13 +35,18 @@ namespace DTO.Model
 
         public int Id { get; set; }
 
+        [Required]
         public string FerryName { get; set;}
 
+        [Required]
         public int GuestPrice { get; set;}
-
+        [Required]
         public int CarPrice { get; set;}
 
+        [Range(0, 10, ErrorMessage = "The amount of cars must be between 0 and 10.")]
         public int AmountofCars { get; set; }
+
+        [Range(0, 40, ErrorMessage = "The amount of passengers must be between 0 and 40.")]
 
         public int AmountofPassengers { get; set; }
 

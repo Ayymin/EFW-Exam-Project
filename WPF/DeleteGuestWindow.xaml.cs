@@ -46,7 +46,7 @@ namespace WPF
                 guestBLL.RemoveGuest(selectedGuest.GuestID);
 
                 selectedFerry.AmountofPassengers--;
-                FerryBLL.UpdateFerryPassengerAmount(selectedFerry);
+                ferryBLL.UpdateFerryPassengerAmount(selectedFerry);
 
                 UpdateRevenue();
                 

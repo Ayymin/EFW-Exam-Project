@@ -11,18 +11,19 @@
             <RowDefinition Height="144*"/>
             <RowDefinition Height="73*"/>
         </Grid.RowDefinitions>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="559,33,0,0" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="-1.673,-4.486"/>
-        <ListBox x:Name="MyListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="436,79,229,73" SelectionChanged="MyListBox_SelectionChanged" Grid.RowSpan="2"/>
+        <Button Content="Press to fetch data from DB
+                " HorizontalAlignment="Left" Margin="280,58,0,0" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="-1.673,-4.486" Width="153"/>
+        <ListBox x:Name="MyListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="438,108,226,44" SelectionChanged="MyListBox_SelectionChanged" Grid.RowSpan="2"/>
 
-        <ListBox x:Name="Ferry_Cars" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="621,78,64,61" Grid.RowSpan="2"/>
-        <Button x:Name="PassengerButton" Content="Add Passenger" HorizontalAlignment="Left" Margin="35,86,0,0" VerticalAlignment="Top" Height="19" Width="97" Click="PassengerButton_Click"/>
-        <Button x:Name="Add_Car" Content="CarButton" HorizontalAlignment="Left" Margin="35,125,0,0" VerticalAlignment="Top" Height="19" Width="97" Click="Button_Click_1"/>
-        <Button Content="Delete Passenger" HorizontalAlignment="Left" Margin="35,167,0,0" VerticalAlignment="Top" Width="97" Click="DeletePassngerWindow"/>
-        <Label Content="Respective Ferry Revenue" HorizontalAlignment="Left" Margin="236,61,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="FerryRevenueTBox" HorizontalAlignment="Left" Margin="248,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="FerryRevenueTBox_TextChanged"/>
-        <Button x:Name="DeleteCarWindowOpener" Content="Delete a car" HorizontalAlignment="Left" Margin="34,211,0,0" VerticalAlignment="Top" Width="98" Click="DeleteCarWindowOpener_Click"/>
-
-
+        <ListBox x:Name="Ferry_Cars" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="611,108,74,31" Grid.RowSpan="2" SelectionChanged="Ferry_Cars_SelectionChanged"/>
+        <Button x:Name="PassengerButton" Content="Add A Guest" HorizontalAlignment="Left" Margin="35,59,0,0" VerticalAlignment="Top" Height="19" Width="97" Click="PassengerButton_Click"/>
+        <Button x:Name="Add_Car" Content="Add A Car" HorizontalAlignment="Left" Margin="35,95,0,0" VerticalAlignment="Top" Height="19" Width="97" Click="Button_Click_1"/>
+        <Button Content="Delete a guest" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Center" Width="97" Click="DeletePassngerWindow"/>
+        <Label Content="Respective Ferry Revenue" HorizontalAlignment="Left" Margin="268,144,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.82,3.314"/>
+        <TextBox x:Name="FerryRevenueTBox" HorizontalAlignment="Left" Margin="280,183,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="DeleteCarWindowOpener" Content="Delete a car" HorizontalAlignment="Left" Margin="35,173,0,0" VerticalAlignment="Top" Width="98" Click="DeleteCarWindowOpener_Click" RenderTransformOrigin="0.478,-0.542"/>
+        <Button x:Name="EditFerryWindowButton" Content="Edit a Car" HorizontalAlignment="Left" Margin="639,77,0,0" VerticalAlignment="Top" Width="76" RenderTransformOrigin="0.355,0.061" Click="EditFerryWindowOpen"/>
+        <Button x:Name="EditCarButton" Content="Edit a car" HorizontalAlignment="Left" Margin="35,207,0,0" VerticalAlignment="Top" Width="97" RenderTransformOrigin="0.472,-0.348" Click="EditCarWindowOpen"/>
     </Grid>
 
 </Window>

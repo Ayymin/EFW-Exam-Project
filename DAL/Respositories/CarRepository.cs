@@ -79,6 +79,7 @@ namespace DAL.Respositories
             {
                 var oldCar = context.Cars.Find(car.CarID);
                 oldCar.NumberPlate = car.NumberPlate;
+                oldCar.AmountOfPassengers = car.AmountOfPassengers;
                 context.SaveChanges();
 
             }

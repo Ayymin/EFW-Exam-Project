@@ -27,7 +27,6 @@ namespace WPF
         GuestBLL guestBLL = new GuestBLL();
         CarBLL carBLLL = new CarBLL();
 
-        private int? selectedPassengerAmount;
         public CreateCarWindow(Ferry ferry)
         {
             InitializeComponent();
@@ -80,7 +79,7 @@ namespace WPF
                     selectedFerry.AmountofPassengers += passengerAmount-1;
                 }
 
-                FerryBLL.UpdateFerryPassengerAmount(selectedFerry);
+                ferryBLL.UpdateFerryPassengerAmount(selectedFerry);
 
                 MessageBox.Show("Car successfully added.");
                 this.Close(); // Close the window after adding the car

@@ -1,0 +1,21 @@
+﻿<Window x:Class="WPF.EditFerryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+        Title="EditFerryWindow" Height="450" Width="800">
+    <Grid Margin="0,0,-141,-28">
+        <ListBox x:Name="CarsOnBoardFerry" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="31,49,729,162"/>
+        <Label Content="Cars&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="76,25,0,0" VerticalAlignment="Top" Width="102"/>
+        <TextBox x:Name="FerryNameTBox" HorizontalAlignment="Left" Margin="346,57,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="72" Height="26"/>
+        <TextBox x:Name="GuestPriceTBox" HorizontalAlignment="Left" Margin="346,101,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="72" Height="27"/>
+        <Label Content="Name&#xD;&#xA;" HorizontalAlignment="Left" Margin="292,54,0,0" VerticalAlignment="Top" Width="56" RenderTransformOrigin="0.759,0.358"/>
+        <Label Content="Guest Price&#xD;&#xA;" HorizontalAlignment="Left" Margin="278,99,0,0" VerticalAlignment="Top" Height="29" Width="120"/>
+        <Label Content="Car Price&#xD;&#xA;" HorizontalAlignment="Left" Margin="348,147,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="CarPriceTbox" HorizontalAlignment="Left" Margin="346,147,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="72" Height="28"/>
+        <Button x:Name="SaveChangesButton" Content="Save Changes" HorizontalAlignment="Left" Margin="338,216,0,0" VerticalAlignment="Top" Width="80" Click="SaveChangesButton_Click"/>
+
+    </Grid>
+</Window>

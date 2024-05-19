@@ -10,13 +10,13 @@ namespace BusinessLogic.BLL
 {
     public class FerryBLL
     {
-        public static Ferry GetFerry(int id)
+        public Ferry GetFerry(int id)
         {
             if(id < 0) throw new IndexOutOfRangeException();
             return FerryRepository.GetFerry(id);
         }
 
-        public static void AddFerry(Ferry ferry)
+        public  void AddFerry(Ferry ferry)
         {
             FerryRepository.AddFerries(ferry);
         }
@@ -27,7 +27,7 @@ namespace BusinessLogic.BLL
 
         }
 
-        public static Ferry UpdateFerryPassengerAmount(Ferry ferry)
+        public Ferry UpdateFerryPassengerAmount(Ferry ferry)
         {
             return FerryRepository.UpdateFerry(ferry);
         }
@@ -42,5 +42,15 @@ namespace BusinessLogic.BLL
             return (ferry.AmountofPassengers * ferry.GuestPrice) + (ferry.AmountofCars * ferry.CarPrice);
         }
 
+        public void UpdateFerry(Ferry ferry)
+        {
+            FerryRepository.UpdateFerry(ferry);
+
+        }
+
+        public void UpdateFerryObject(Ferry ferry)
+        {
+            FerryRepository.UpdateFerryObject(ferry);
+        }
     }
 }

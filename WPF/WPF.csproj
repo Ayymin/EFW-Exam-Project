@@ -106,6 +106,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="EditCarWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditFerryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -125,6 +133,12 @@
     </Compile>
     <Compile Include="DeleteGuestWindow.xaml.cs">
       <DependentUpon>DeleteGuestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditCarWindow.xaml.cs">
+      <DependentUpon>EditCarWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditFerryWindow.xaml.cs">
+      <DependentUpon>EditFerryWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

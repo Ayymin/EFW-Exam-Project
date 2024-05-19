@@ -39,5 +39,7 @@ namespace BusinessLogic.BLL
             if (id < 0) throw new IndexOutOfRangeException();
             return GuestRepository.GetAllGuests();
         }
+
+
     }
 }

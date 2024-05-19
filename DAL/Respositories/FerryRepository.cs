@@ -49,13 +49,28 @@ namespace DAL.Respositories
                     existingFerry.AmountofPassengers = ferry.AmountofPassengers;
                     existingFerry.AmountofCars = ferry.AmountofCars;
                     context.SaveChanges();
-                    return FerryMapper.Map(existingFerry); // Ensure to map back to DTO before returning
+                    return FerryMapper.Map(existingFerry); 
                 }
-                return null; // Handle the case where the ferry is not found
+                return null; 
             }
         }
 
-     
+        public static void UpdateFerryObject(Ferry ferry)
+        {
+            using (FerryContext context = new FerryContext())
+            {
+                var existingFerry = context.Ferries.Find(ferry.Id);
+
+                existingFerry.FerryName = ferry.FerryName;
+                existingFerry.GuestPrice = ferry.GuestPrice;
+                existingFerry.CarPrice = ferry.CarPrice;
+
+                context.SaveChanges();
+            }
+        }
+
+
+
 
     }
 }

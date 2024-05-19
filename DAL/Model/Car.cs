@@ -24,10 +24,12 @@ namespace Eksamensprojekt.Model
 
         public int GuestId {  get; set; }
 
+        [Required]
         public string NumberPlate { get; set; }
 
         public int FerryID { get; set; }
 
+        [Required]
         public int AmountOfPassengers { get; set; }
 
 

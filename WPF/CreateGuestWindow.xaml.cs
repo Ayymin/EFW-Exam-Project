@@ -24,6 +24,7 @@ namespace WPF
     public partial class CreateGuestWindow : Window
     {
         Ferry selectedFerry;
+        FerryBLL ferryBLL;
         public CreateGuestWindow(Ferry ferry)
         {
             InitializeComponent();
@@ -65,7 +66,7 @@ namespace WPF
             guestBLL.AddGuest(guest);
 
             selectedFerry.AmountofPassengers++;
-            FerryBLL.UpdateFerryPassengerAmount(selectedFerry);
+            ferryBLL.UpdateFerryPassengerAmount(selectedFerry);
             UpdateRevenue();
 
 
