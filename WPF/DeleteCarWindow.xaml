@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="DeleteCarWindow" Height="450" Width="800">
     <Grid>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="98,98,562,97"/>
-        <Label Content="Cars onboard the respective ferry" HorizontalAlignment="Left" Margin="63,66,0,0" VerticalAlignment="Top" Width="190"/>
-        <Button Content="Delete Selected Car
-                " HorizontalAlignment="Left" Margin="292,189,0,0" VerticalAlignment="Top" Width="108"/>
+        <ListBox x:Name="CarListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="98,98,562,97"/>
+        <Label Content="Cars onboard the respective ferry" HorizontalAlignment="Left" Margin="73,67,0,0" VerticalAlignment="Top" Width="190"/>
+        <Button x:Name="DeleteCarrButton" Content="Delete Selected Car
+                " HorizontalAlignment="Left" Margin="292,189,0,0" VerticalAlignment="Top" Width="108" Click="DeleteCarSelectedButton"/>
 
     </Grid>
 </Window>

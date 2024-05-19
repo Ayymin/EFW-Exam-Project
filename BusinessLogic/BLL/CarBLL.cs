@@ -37,6 +37,10 @@ namespace BusinessLogic.BLL
             return CarRepository.GetPassengerAmount(id);
         }
 
+        public void EditCar(Car car) 
+        {
+            CarRepository.EditCar(car);
+        }
         
           
            

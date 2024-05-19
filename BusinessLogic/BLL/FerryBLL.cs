@@ -32,10 +32,15 @@ namespace BusinessLogic.BLL
             return FerryRepository.UpdateFerry(ferry);
         }
 
+        public static Ferry UpdateFerryCarAmount(Ferry ferry)
+        {
+            return FerryRepository.UpdateFerry(ferry);
+        }
 
-
-       
-
+        public int CalculateFerryPrice(Ferry ferry)
+        {
+            return (ferry.AmountofPassengers * ferry.GuestPrice) + (ferry.AmountofCars * ferry.CarPrice);
+        }
 
     }
 }

@@ -36,23 +36,8 @@ namespace WPF
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MyListBox.Items.Clear();
-
-           // Ferry selectedFerry = FerryBLL.getFerry(1);
-
-         
-
-            /*
-             Lav et vindue hvor jeg kan oprette en bil
-            Tilføj en eksisterende passager til en bil
-            Følg samme tilgang hvor jeg tilføjer en bil til en færge
-            */
-
             FerryBLL ferryBLL = new FerryBLL();
             MyListBox.ItemsSource = (ferryBLL.GetAllFerries());
-
-            /*selectedFerry = (Ferry)MyListBox.SelectedItem;
-            CarBLL carBLL = new CarBLL();
-            Ferry_Cars.ItemsSource = (carBLL.getAllCars(selectedFerry.Id)); */
         } 
 
         private void PassengerButton_Click(object sender, RoutedEventArgs e)
@@ -62,29 +47,24 @@ namespace WPF
 
                 selectedFerry = (Ferry)MyListBox.SelectedItem;
                 selectedFerry = FerryBLL.GetFerry(selectedFerry.Id);
-
-
                 CreateGuestWindow createGuestWindow = new CreateGuestWindow(selectedFerry);
 
                 createGuestWindow.Show();
             }
-           
-            
         }
 
         private void MyListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
             selectedFerry = (Ferry)MyListBox.SelectedItem;
             CarBLL carBLL = new CarBLL();
             Ferry_Cars.ItemsSource = (carBLL.GetAllCars(selectedFerry.Id));
-
-        }
-        
+            FerryBLL ferryBLL = new FerryBLL();
+            
+            FerryRevenueTBox.Text = ferryBLL.CalculateFerryPrice(selectedFerry).ToString();
+        }     
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
             selectedFerry = (Ferry)MyListBox.SelectedItem;
             selectedFerry = FerryBLL.GetFerry(selectedFerry.Id);
 
@@ -99,6 +79,21 @@ namespace WPF
 
             DeleteGuestWindow deleteGuestWindow = new DeleteGuestWindow(selectedFerry);
             deleteGuestWindow.Show();
+
+        }
+
+        private void DeleteCarWindowOpener_Click(object sender, RoutedEventArgs e)
+        {
+            selectedFerry = (Ferry)MyListBox.SelectedItem;
+            selectedFerry = FerryBLL.GetFerry(selectedFerry.Id);
+
+            DeleteCarWindow deleteCarWindow = new DeleteCarWindow(selectedFerry);
+            deleteCarWindow.Show();
+
+        }
+
+        private void FerryRevenueTBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
     }

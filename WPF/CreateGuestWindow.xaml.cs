@@ -51,31 +51,42 @@ namespace WPF
                 return;
             }
 
-            // Retrieve input values
             string guestName = GuestNameTBox.Text;
             string guestGender = GuestGenderTBox.Text;
             bool isDriver = TravelingWithCarRadioButton.IsChecked ?? false;
 
 
-            // Create a new guest object
             Guest guest = new Guest(guestName, guestAge, guestGender, isDriver)
             {
                 FerryId = selectedFerry.Id
             };
 
-            // Add the guest using business logic layer
             GuestBLL guestBLL = new GuestBLL();
             guestBLL.AddGuest(guest);
 
-            // Update the AmountofPassengers in the database
             selectedFerry.AmountofPassengers++;
             FerryBLL.UpdateFerryPassengerAmount(selectedFerry);
+            UpdateRevenue();
 
-            // Show success message
 
             MessageBox.Show("Guest successfully registered.");
         }
 
+        private void UpdateRevenue()
+        {
+            double updatedRevenue = new FerryBLL().CalculateFerryPrice(selectedFerry);
+
+            var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            if (mainWindow != null)
+            {
+                mainWindow.FerryRevenueTBox.Text = updatedRevenue.ToString();
+            }
+        }
+
+
+
 
     }
+
+
 }

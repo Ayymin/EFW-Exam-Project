@@ -67,10 +67,19 @@ namespace WPF
                     GuestId = selectedGuest.GuestID
                 };
 
-                carBLLL.AddCar(car);
+                selectedFerry.AmountofCars++;
+                
 
-                // Update the ferry's passenger count
-                selectedFerry.AmountofPassengers += passengerAmount;
+                if (passengerAmount <= 1)
+                {
+                    carBLLL.AddCar(car);
+
+                } else
+                {
+                    carBLLL.AddCar(car);
+                    selectedFerry.AmountofPassengers += passengerAmount-1;
+                }
+
                 FerryBLL.UpdateFerryPassengerAmount(selectedFerry);
 
                 MessageBox.Show("Car successfully added.");

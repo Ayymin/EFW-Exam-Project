@@ -48,6 +48,9 @@ namespace WPF
                 selectedFerry.AmountofPassengers--;
                 FerryBLL.UpdateFerryPassengerAmount(selectedFerry);
 
+                UpdateRevenue();
+                
+
                 UpdateGuestListBox();
             }
             else
@@ -63,6 +66,17 @@ namespace WPF
             GuestListBox.ItemsSource = guestList;
         }
 
+
+        private void UpdateRevenue()
+        {
+            double updatedRevenue = ferryBLL.CalculateFerryPrice(selectedFerry);
+
+            var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            if (mainWindow != null)
+            {
+                mainWindow.FerryRevenueTBox.Text = updatedRevenue.ToString();
+            }
+        }
 
     }
 }

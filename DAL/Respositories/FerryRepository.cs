@@ -47,6 +47,7 @@ namespace DAL.Respositories
                 if (existingFerry != null)
                 {
                     existingFerry.AmountofPassengers = ferry.AmountofPassengers;
+                    existingFerry.AmountofCars = ferry.AmountofCars;
                     context.SaveChanges();
                     return FerryMapper.Map(existingFerry); // Ensure to map back to DTO before returning
                 }
@@ -54,6 +55,7 @@ namespace DAL.Respositories
             }
         }
 
+     
 
     }
 }

@@ -72,6 +72,19 @@ namespace DAL.Respositories
             }
         }
 
+        
+        public static void EditCar(DTO.Model.Car car)
+        {
+            using (FerryContext context = new FerryContext())
+            {
+                var oldCar = context.Cars.Find(car.CarID);
+                oldCar.NumberPlate = car.NumberPlate;
+                context.SaveChanges();
+
+            }
+
+        }
+
     }
 
 

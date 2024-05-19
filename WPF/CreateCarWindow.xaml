@@ -14,6 +14,7 @@
         <Button x:Name="AddGuestForCar" Content="Add To Car" HorizontalAlignment="Left" Margin="301,269,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.277,1.27" Click="AddToCar"/>
         <TextBlock Text="Car Passengers:" Margin="220,140,476,267"/>
         <ComboBox x:Name="PassengerAmountBox" HorizontalAlignment="Left" Margin="204,182,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="PassengerAmountBox_SelectionChanged">
+            <ComboBoxItem>1</ComboBoxItem>
             <ComboBoxItem>2</ComboBoxItem>
             <ComboBoxItem>3</ComboBoxItem>
             <ComboBoxItem>4</ComboBoxItem>
