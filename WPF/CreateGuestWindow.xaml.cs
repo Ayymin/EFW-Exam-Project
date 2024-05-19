@@ -29,6 +29,7 @@ namespace WPF
         {
             InitializeComponent();
             selectedFerry = ferry;
+            ferryBLL = new FerryBLL();
         }
 
 
